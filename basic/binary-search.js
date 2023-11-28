@@ -46,3 +46,5 @@ const binarySearchRec = (arr, t) => {
 console.log(binarySearchRec([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5)); // 4
 console.log(binarySearchRec([-5, 2, 4, 6, 10], 6)); // 3
 console.log(binarySearchRec([-5, 2, 4, 6, 10], 20)); // -1
+
+// Big-O: O(log n)
