@@ -20,3 +20,6 @@ const quickSort = (arr) => {
 };
 
 console.log(quickSort(arr));
+
+// worst case : o(n^2) - Quadratic
+// best case : o(n log n) - Linearithmic
