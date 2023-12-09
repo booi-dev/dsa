@@ -24,3 +24,6 @@ const mergeSort = (arr) => {
 };
 
 console.log(mergeSort(arr)); // [-6, -2, 4, 8, 20]
+
+// worst case : o(n log n) - Linearithmic
+// best case : o(n log n) - Linearithmic
