@@ -10,7 +10,7 @@ class Queue {
     this.rear += 1;
   }
 
-  deQueue(element) {
+  deQueue() {
     const itemAtFront = this.items[this.front];
     this.items;
     delete this.items[this.front];
