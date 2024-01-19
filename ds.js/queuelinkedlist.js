@@ -9,14 +9,20 @@ class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.size = null;
+    this.size = 0;
   }
 
   addFromRear(value) {
     let newNode = new Node(value);
-    newNode.next = this.head;
-    this.head = newNode;
-    this.seie += 1;
+
+    if (this.size === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      this.tail = this.tail.next;
+    }
+    this.size += 1;
   }
 
   removeFromHead() {
@@ -37,11 +43,11 @@ class Queue {
     this.items = new LinkedList();
   }
 
-  push(value) {
+  enqueue(value) {
     this.items.addFromRear(value);
   }
 
-  pop() {
+  dequeue() {
     this.items.removeFromHead();
   }
 
@@ -52,14 +58,14 @@ class Queue {
 
 const myqueue = new Queue();
 
-myqueue.push(1);
-myqueue.push(2);
-myqueue.push(3);
-myqueue.push(4);
-myqueue.push(5);
-myqueue.push(6);
+myqueue.enqueue(1);
+myqueue.enqueue(2);
+myqueue.enqueue(3);
+myqueue.enqueue(4);
+myqueue.enqueue(5);
+myqueue.enqueue(6);
 
-myqueue.pop();
-myqueue.pop();
+myqueue.dequeue();
+myqueue.dequeue();
 
 myqueue.print();
