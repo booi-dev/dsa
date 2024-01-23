@@ -120,35 +120,50 @@ myList.addNode(6);
 
 // console.log(myList.head);
 
-// first solution
-var middleNode = function (head) {
-  let currentHead = head;
+// BRUTH FORCE SOLUTION -
+// const middleNode = function (head) {
+//   let currentHead = head;
 
-  let size = 0;
-  let result = null;
+//   let size = 0;
+//   let result = null;
 
-  while (currentHead) {
-    size += 1;
-    currentHead = currentHead.next;
+//   while (currentHead) {
+//     size += 1;
+//     currentHead = currentHead.next;
+//   }
+
+//   currentHead = head;
+
+//   let midPosition = Math.floor(size / 2) + 1;
+
+//   let currentPosition = 0;
+
+//   while (currentHead) {
+//     currentPosition += 1;
+
+//     if (currentPosition === midPosition) {
+//       result = currentHead;
+//       break;
+//     }
+//     currentHead = currentHead.next;
+//   }
+
+//   return result;
+// };
+
+// SECOND SOLUTION
+// TWO POINTS SOLUTIONs
+
+const middleNode = function (head) {
+  let pointA = head;
+  let pointB = head;
+
+  while (pointB && pointB.next) {
+    pointA = pointA.next;
+    pointB = pointB.next.next;
   }
 
-  currentHead = head;
-
-  let midPosition = Math.floor(size / 2) + 1;
-
-  let currentPosition = 0;
-
-  while (currentHead) {
-    currentPosition += 1;
-
-    if (currentPosition === midPosition) {
-      result = currentHead;
-      break;
-    }
-    currentHead = currentHead.next;
-  }
-
-  return result;
+  return pointA;
 };
 
-console.log("Result----", middleNode(myList.head));
+console.log("Result---->", middleNode(myList.head));
