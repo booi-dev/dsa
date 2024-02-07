@@ -112,21 +112,35 @@ myList.addNode(4);
 myList.addNode(5);
 
 // LOGIC
+//Iterative
+// const reverseList = function (head) {
+//   let prev = null;
+//   let current = head;
+
+//   while (current) {
+//     let next = current.next;
+//     current.next = prev;
+//     prev = current;
+//     current = next;
+//   }
+
+//   head = prev;
+
+//   return head;
+// };
+
+// recursion
+
+const reverseListInt = (head, newHead) => {
+  if (head === null) return newHead;
+
+  let next = head.next;
+  head.next = newHead;
+  return reverseListInt(next, head);
+};
 
 const reverseList = function (head) {
-  let prev = null;
-  let current = head;
-
-  while (current) {
-    let next = current.next;
-    current.next = prev;
-    prev = current;
-    current = next;
-  }
-
-  head = prev;
-
-  return head;
+  return reverseListInt(head, null);
 };
 
 console.log("Result---->", reverseList(myList.head));
