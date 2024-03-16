@@ -28,11 +28,9 @@ class LinkedList {
   }
 
   // remove
-  remove(tobeRemoveVal) {
-    let currentNode = this.head;
     let prev = null;
 
-    while (currentNode) {
+    while (currentNode){
       if (currentNode.value === tobeRemoveVal) {
         if (prev) {
           prev.next = currentNode.next;
